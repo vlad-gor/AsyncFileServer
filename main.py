@@ -19,15 +19,17 @@ async def upload_file(request):
     result = await fm.upload_file(request)
     return web.Response(text=result)
 
-@routes.get("/file/")
+@routes.get("/file/{idhash}")
 async def download_file(request):
     print('get request:', request)
+    idhash = request.match_info['idhash']
     fm.download()
     return web.Response(text="Download File")
 
-@routes.delete("/file/{idhash}/")
-async def delete_file(request, idhash):
+@routes.delete("/file/{idhash}")
+async def delete_file(request):
     print('get request:', request)
+    idhash = request.match_info['idhash']
     fm.delete_file()
     return web.Response(text="Delete File")
 

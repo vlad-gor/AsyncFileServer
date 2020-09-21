@@ -28,5 +28,10 @@ Delete:
 Примеры команд
 для загрузки файла:
 curl -F "file=@test.txt" http://127.0.0.1:8080/upload_file
+
 для получения файла
+curl -X GET http://127.0.0.1:8080/file/{idhash}
+
+для удаления файла
+curl -X DELETE http://127.0.0.1:8080/file/{idhash}
 

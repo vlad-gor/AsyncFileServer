@@ -16,10 +16,9 @@ class TestStorage(unittest.TestCase):
 
     # загрузка файла
     def test_upload_file(self):
-        pass
-        # files = {'file': open('README.md', 'rb')}
-        # resp = requests.post('http://127.0.0.1:8080/upload_file',files=files)
-        # self.assertEqual(resp.status_code,200)
+        files = {'file': open('README.md', 'rb')}
+        resp = requests.post('http://127.0.0.1:8080/upload_file',files=files)
+        self.assertEqual(resp.status_code,200)
 
     # выгрузка файла
     def test_download_file(self):
